@@ -77,8 +77,10 @@ def read_counters(name):
     app.logger.info("Request to Read counter: %s...", name)
 
     if name not in COUNTER:
-        return abort(status.HTTP_404_NOT_FOUND, 
-        f"Counter {name} does not exist")
+        return abort(
+            status.HTTP_404_NOT_FOUND,
+            f"Counter {name} does not exist"
+            )
 
     counter = COUNTER[name]
     return jsonify(name=name, counter=counter)
@@ -93,8 +95,10 @@ def update_counters(name):
     app.logger.info("Request to Update counter: %s...", name)
 
     if name not in COUNTER:
-        return abort(status.HTTP_404_NOT_FOUND, 
-        f"Counter {name} does not exist")
+        return abort(
+                status.HTTP_404_NOT_FOUND,
+                f"Counter {name} does not exist"
+                )
 
     COUNTER[name] += 1
 
