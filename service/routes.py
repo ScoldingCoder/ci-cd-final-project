@@ -57,7 +57,7 @@ def create_counters(name):
     if name in COUNTER:
         return abort(
             status.HTTP_409_CONFLICT,
-             f"Counter {name} already exists"
+            f"Counter {name} already exists"
              )
 
     COUNTER[name] = 0

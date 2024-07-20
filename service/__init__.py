@@ -9,7 +9,7 @@ app = Flask(__name__)
 # pylint:disable=wrong-import-position,cyclic-import
 from service import routes
 # pylint: disable=wrong-import-position
-from service.common import log_handlers 
+from service.common import log_handlers
 
 log_handlers.init_logging(app, "gunicorn.error")
 
